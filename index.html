@@ -1,0 +1,239 @@
+<!--
+  Wedding Invitation Website
+  Built by Asad Mirza
+  LinkedIn: https://www.linkedin.com/in/asad-mirza-8554a134b/
+  GitHub: https://github.com/asadmirza-34
+-->
+
+<html lang="en" class="scroll-smooth"><head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Maria & Enrique — 2026</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://code.iconify.design/iconify-icon/1.0.7/iconify-icon.min.js"></script>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+    <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Manrope:wght@400;700&display=swap" rel="stylesheet">
+    
+</head>
+<body class="bg-[#f2f2f0] text-[#1a1a1a] font-sans-modern antialiased selection:bg-black selection:text-white overflow-x-hidden">
+
+    <!-- Loading Screen -->
+    <div class="loading-screen flex flex-col items-center gap-4">
+        <span class="font-serif-modern text-4xl italic">M & E</span>
+        <div class="w-24 h-[1px] bg-gray-200 overflow-hidden">
+            <div class="h-full bg-black animate-[ping_1.5s_cubic-bezier(0,0,0.2,1)_infinite]"></div>
+        </div>
+    </div>
+    <div id="lightbox" class="fixed inset-0 z-[60] bg-white/95 backdrop-blur-sm closed flex items-center justify-center p-4">
+        <button id="lightbox-close" class="absolute top-6 right-6 p-4 hover:rotate-90 transition-transform duration-300">
+            <iconify-icon icon="solar:close-circle-linear" width="40"></iconify-icon>
+        </button>
+        <img id="lightbox-img" src="" class="max-h-[90vh] max-w-full shadow-2xl rounded-sm object-contain" alt="Detail">
+    </div>
+
+    <div class="flex flex-col lg:flex-row w-full min-h-screen">
+
+        <!-- LEFT: Fixed Hero (Desktop) / Static (Mobile) -->
+        <aside class="relative w-full lg:w-[65%] h-[70vh] lg:h-screen lg:sticky lg:top-0 overflow-hidden bg-[#e5e5e0]">
+            <img src="images/M.E.11.jfif" class="absolute inset-0 w-full h-full object-cover grayscale opacity-90 scale-105 animate-[pulse_15s_ease-in-out_infinite]" alt="Couple">
+            <div class="absolute inset-0 bg-gradient-to-b from-black/10 via-transparent to-black/40"></div>
+            <div class="absolute top-8 left-8 z-20 mix-blend-difference text-white">
+                <span class="text-xs font-bold tracking-[0.3em] uppercase border border-white/30 px-3 py-1 rounded-full backdrop-blur-md">Est. 2026</span>
+            </div>
+
+            <div class="absolute top-8 right-8 z-20">
+                <button id="music-btn" class="group flex items-center gap-2 bg-white/10 backdrop-blur-md px-4 py-2 rounded-full border border-white/20 hover:bg-white hover:text-black transition-all duration-500">
+                    <span id="music-text" class="text-[10px] uppercase tracking-widest font-bold hidden group-hover:block transition-all">Play Audio</span>
+                    <span id="icon-wrapper" class="flex items-center">
+                        <iconify-icon icon="solar:music-library-2-linear" width="20"></iconify-icon>
+                    </span>
+                </button>
+            </div>
+
+            <div class="absolute bottom-12 left-8 lg:left-12 z-20 text-white mix-blend-difference">
+                <h1 class="font-serif-modern text-7xl lg:text-[9rem] leading-[0.85] tracking-tight">
+                    <span class="block hover:translate-x-4 transition-transform duration-700">Maria</span>
+                    <span class="block text-4xl lg:text-6xl font-sans-modern font-light italic ml-2 my-2 opacity-80">&</span>
+                    <span class="block lg:ml-24 hover:translate-x-4 transition-transform duration-700 delay-100">Enrique</span>
+                </h1>
+                <div class="mt-8 flex items-center gap-3 text-sm tracking-widest uppercase">
+                    <iconify-icon icon="solar:map-point-linear" width="18"></iconify-icon>
+                    <span>Madrid — May 31</span>
+                </div>
+            </div>
+        </aside>
+
+        <!-- RIGHT: Scrollable Content -->
+        <main class="w-full lg:w-[35%] bg-[#f2f2f0] border-l border-gray-300 relative z-10">
+            <div class="border-b border-gray-300 bg-black text-white py-3 overflow-hidden">
+                <div class="marquee-container">
+                    <div class="marquee-content font-sans-modern text-xs font-bold tracking-[0.2em] uppercase">
+                        Save The Date • May 31st, 2026 • The Wedding Celebration • Madrid, Spain • Save The Date • May 31st, 2026 • The Wedding Celebration • Jakarta, Indonesia •
+                    </div>
+                </div>
+            </div>
+
+            <section class="px-8 py-20 border-b border-gray-300 text-center">
+                <div class="fade-in-up">
+                    <iconify-icon icon="solar:hearts-linear" width="32" class="text-gray-400 mb-6"></iconify-icon>
+                    <p class="font-sans-modern text-sm uppercase tracking-widest text-gray-500 mb-4">Together with our families</p>
+                    <p class="font-serif-modern text-3xl lg:text-4xl leading-snug text-gray-900 mb-8">
+                        We invite you to join us as we begin our new life together.
+                    </p>
+                    <div class="w-px h-16 bg-gray-300 mx-auto"></div>
+                </div>
+            </section>
+
+            <section class="grid grid-cols-4 border-b border-gray-300 divide-x divide-gray-300 bg-white">
+                <div class="py-6 text-center group hover:bg-gray-50 transition-colors">
+                    <span class="block font-serif-modern text-3xl group-hover:scale-110 transition-transform duration-300" id="days">00</span>
+                    <span class="text-[9px] uppercase tracking-widest text-gray-400">Days</span>
+                </div>
+                <div class="py-6 text-center group hover:bg-gray-50 transition-colors">
+                    <span class="block font-serif-modern text-3xl group-hover:scale-110 transition-transform duration-300" id="hours">00</span>
+                    <span class="text-[9px] uppercase tracking-widest text-gray-400">Hrs</span>
+                </div>
+                <div class="py-6 text-center group hover:bg-gray-50 transition-colors">
+                    <span class="block font-serif-modern text-3xl group-hover:scale-110 transition-transform duration-300" id="minutes">00</span>
+                    <span class="text-[9px] uppercase tracking-widest text-gray-400">Min</span>
+                </div>
+                <div class="py-6 text-center group hover:bg-gray-50 transition-colors">
+                    <span class="block font-serif-modern text-3xl group-hover:scale-110 transition-transform duration-300" id="seconds">00</span>
+                    <span class="text-[9px] uppercase tracking-widest text-gray-400">Sec</span>
+                </div>
+            </section>
+
+            <section class="p-4 border-b border-gray-300">
+                <div class="fade-in-up bg-white p-8 border border-gray-200 shadow-[0_4px_20px_-10px_rgba(0,0,0,0.05)]">
+                    <div class="flex items-center justify-between mb-8">
+                        <h2 class="font-serif-modern text-3xl italic">The Couple</h2>
+                        <iconify-icon icon="solar:users-group-rounded-linear" width="24" class="text-gray-400"></iconify-icon>
+                    </div>
+                    
+                    <div class="space-y-8">
+                        <div class="flex items-center gap-6 group cursor-pointer">
+                            <div class="w-20 h-20 overflow-hidden rounded-full border border-gray-200">
+                                <img src="images/Enrique.18.jpg" class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-500" alt="Groom">
+                            </div>
+                            <div>
+                                <h3 class="font-sans-modern font-bold text-lg uppercase tracking-wide">Enrique</h3>
+                                <p class="text-xs text-gray-500 mt-1 font-serif-modern italic text-lg">The Groom</p>
+                            </div>
+                        </div>
+
+                        <div class="w-full h-px bg-gray-100"></div>
+
+                        <div class="flex items-center gap-6 group cursor-pointer">
+                            <div class="w-20 h-20 overflow-hidden rounded-full border border-gray-200">
+                                <img src="images/Maria.18.jpg" class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-500" alt="Bride">
+                            </div>
+                            <div>
+                                <h3 class="font-sans-modern font-bold text-lg uppercase tracking-wide">Maria</h3>
+                                <p class="text-xs text-gray-500 mt-1 font-serif-modern italic text-lg">The Bride</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="py-16 px-8 border-b border-gray-300">
+                <h2 class="font-serif-modern text-4xl mb-12 text-center">Itinerary</h2>
+                <div class="space-y-0 fade-in-up">
+                    <div class="relative pl-8 pb-12 border-l border-gray-300 last:border-0 hover:pl-10 transition-all duration-300">
+                        <div class="absolute -left-[9px] top-0 bg-white p-1">
+                            <div class="w-3 h-3 bg-black rounded-full"></div>
+                        </div>
+                        <span class="text-xs font-bold uppercase tracking-widest text-gray-400 mb-2 block">10:00 AM — Ceremony</span>
+                        <h3 class="text-xl font-serif-modern text-2xl mb-2">Holy Matrimony</h3>
+                        <p class="text-sm text-gray-600 mb-3 leading-relaxed">Join us for the blessing of our marriage at the Castillo.</p>
+                        <a href="https://www.google.com/maps" class="inline-flex items-center gap-1 text-xs uppercase font-bold border-b border-black pb-0.5 hover:text-gray-600 hover:border-gray-600 transition-colors">
+                            Location Map <iconify-icon icon="solar:arrow-right-linear"></iconify-icon>
+                        </a>
+                    </div>
+
+                    <div class="relative pl-8 border-l border-gray-300 last:border-0 hover:pl-10 transition-all duration-300">
+                        <div class="absolute -left-[9px] top-0 bg-white p-1">
+                            <div class="w-3 h-3 border border-black bg-white rounded-full"></div>
+                        </div>
+                        <span class="text-xs font-bold uppercase tracking-widest text-gray-400 mb-2 block">06:00 PM — Reception</span>
+                        <h3 class="text-xl font-serif-modern text-2xl mb-2">Dinner & Party</h3>
+                        <p class="text-sm text-gray-600 mb-3 leading-relaxed">Dinner, and dancing to celebrate the night away.</p>
+                        <a href="https://www.google.com/maps" class="inline-flex items-center gap-1 text-xs uppercase font-bold border-b border-black pb-0.5 hover:text-gray-600 hover:border-gray-600 transition-colors">
+                            Location Map <iconify-icon icon="solar:arrow-right-linear"></iconify-icon>
+                        </a>
+                    </div>
+                </div>
+            </section>
+
+            <section class="border-b border-gray-300 bg-white">
+                <div class="grid grid-cols-2">
+                    <div class="aspect-[3/4] relative overflow-hidden group cursor-pointer border-r border-b border-gray-200">
+                        <img src="images/Enqrique.11.webp" class="gallery-img w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 grayscale group-hover:grayscale-0">
+                        <div class="absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-colors duration-300 pointer-events-none"></div>
+                    </div>
+                    <div class="aspect-[3/4] relative overflow-hidden group cursor-pointer border-b border-gray-200">
+                        <img src="images/Maria.13.jpg" class="gallery-img w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 grayscale group-hover:grayscale-0">
+                    </div>
+                    <div class="aspect-[3/4] relative overflow-hidden group cursor-pointer border-r border-gray-200">
+                        <img src="images/M.E.11.jfif" class="gallery-img w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 grayscale group-hover:grayscale-0">
+                    </div>
+                    <div class="aspect-[3/4] relative overflow-hidden group cursor-pointer">
+                        <div class="w-full h-full bg-[#f5f5f0] flex flex-col items-center justify-center p-6 text-center group-hover:bg-black group-hover:text-white transition-colors duration-500">
+                            <iconify-icon icon="solar:camera-minimalistic-linear" width="32" class="mb-2"></iconify-icon>
+                            <span class="font-serif-modern text-2xl italic">View Gallery</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="px-8 py-20 bg-[#f2f2f0]">
+                <div class="fade-in-up">
+                    <h2 class="font-serif-modern text-4xl text-center mb-2">A.S.A.P</h2>
+                    <p class="text-center text-xs uppercase tracking-widest text-gray-500 mb-10">Kindly respond by May 31st, 2026</p>
+
+                    <form id="rsvp-form" class="space-y-8 max-w-sm mx-auto">
+                        <div class="relative group">
+                            <input type="text" id="name" required="" class="peer w-full bg-transparent border-b border-gray-400 py-2 text-sm focus:outline-none focus:border-black transition-colors placeholder-transparent">
+                            <label for="name" class="absolute left-0 -top-3.5 text-xs text-gray-500 transition-all peer-placeholder-shown:text-sm peer-placeholder-shown:text-gray-400 peer-placeholder-shown:top-2 peer-focus:-top-3.5 peer-focus:text-xs peer-focus:text-black">Guest Name</label>
+                        </div>
+
+                        <div class="relative">
+                            <select class="w-full bg-transparent border-b border-gray-400 py-2 text-sm focus:outline-none focus:border-black transition-colors appearance-none cursor-pointer text-gray-700">
+                                <option>Happily Accept</option>
+                                <option>Regretfully Decline</option>
+                            </select>
+                            <iconify-icon icon="solar:alt-arrow-down-linear" class="absolute right-0 top-3 pointer-events-none text-gray-400"></iconify-icon>
+                        </div>
+
+                        <div class="relative">
+                            <select class="w-full bg-transparent border-b border-gray-400 py-2 text-sm focus:outline-none focus:border-black transition-colors appearance-none cursor-pointer text-gray-700">
+                                <option>1 Guest</option>
+                                <option>2 Guests</option>
+                            </select>
+                            <iconify-icon icon="solar:alt-arrow-down-linear" class="absolute right-0 top-3 pointer-events-none text-gray-400"></iconify-icon>
+                        </div>
+
+                        <button type="submit" class="w-full bg-black text-white py-4 text-xs font-bold uppercase tracking-[0.2em] hover:bg-gray-800 transition-all duration-300 flex items-center justify-center gap-2 group">
+                            <span>Confirm Attendance</span>
+                            <iconify-icon icon="solar:arrow-right-linear" class="group-hover:translate-x-1 transition-transform"></iconify-icon>
+                        </button>
+                    </form>
+                </div>
+            </section>
+
+            <footer class="bg-black text-white py-12 px-8 text-center border-t border-gray-800">
+                <div class="font-serif-modern text-5xl mb-6">M & E</div>
+                <div class="flex justify-center gap-6 mb-8 text-gray-400">
+                    <a href="#" class="hover:text-white transition-colors"><iconify-icon icon="mdi:instagram" width="20"></iconify-icon></a>
+                    <a href="#" class="hover:text-white transition-colors"><iconify-icon icon="solar:global-linear" width="20"></iconify-icon></a>
+                </div>
+                <p class="text-[10px] text-gray-600 uppercase tracking-widest">© 2026 Designed with Love</p>
+            </footer>
+        </main>
+    </div>
+
+    <script src="main.js"></script>
+
+</body></html>
