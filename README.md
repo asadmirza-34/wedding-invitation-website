@@ -29,7 +29,7 @@ This project blends visual storytelling with smooth animations, interactive musi
 
 ## 🚀 Live Demo
 
-_(Deployment in progress — link will be updated soon)_
+https://asadmirza-34.github.io/wedding-invitation-website/
 
 ---
 
@@ -79,4 +79,5 @@ Software Engineering Student | Beginner Web Developer
 
 This project is created for learning and portfolio purposes.
 If reused or modified, proper credit to the author is appreciated.
+
 
